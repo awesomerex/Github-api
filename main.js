@@ -14,13 +14,17 @@ function getUserRepos(username) {
   		}
   		console.log(data);
   		var context = {
-  			'repo': data
+  			'repo': data,
+  			'username' : username
   		};
   		 // Pass our data to the template
   		var theCompiledHtml = theTemplate(context);
 
+  		//clear out previous searches
+  		$('#handlebars-area').empty();
+
   		// Add the compiled html to the page
-  		$(document.body).append(theCompiledHtml);
+  		$('#handlebars-area').append(theCompiledHtml);
   });
 }
 
