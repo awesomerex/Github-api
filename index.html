@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Git Hub Get Stuff</title>
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+	<script src="main.js"></script>
+
+</head>
+<body>
+		<input type="text" id="gitUserName"></input>
+		<input type="button" value="get user repos" onclick="processClick()"></input>
+
+		<script id="repo-template" type="text/x-handlebars-template">
+		{{#each repo}}
+		<p>Repo Name: {{this.name}} <br/>
+		   full_name: {{this.full_name}} <br/>
+		   private: {{this.private}} <br/>
+		   html_url: {{this.html_url}} <br/>
+		   description: {{this.description}}<br/>
+		   url: {{this.url}}
+		</p>
+		{{/each}}
+		</script>
+</body>
+</html>
